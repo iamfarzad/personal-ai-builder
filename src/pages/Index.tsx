@@ -8,6 +8,7 @@ import BasicSteps from '@/components/basic/BasicSteps';
 import IntermediateSteps from '@/components/intermediate/IntermediateSteps';
 import AdvancedSteps from '@/components/advanced/AdvancedSteps';
 import CallToAction from '@/components/CallToAction';
+import PlatformsBanner from '@/components/PlatformsBanner';
 
 const Index = () => {
   // Animate elements when they come into view
@@ -24,6 +25,8 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero />
+        
+        <PlatformsBanner />
         
         <LevelSection
           id="basic"

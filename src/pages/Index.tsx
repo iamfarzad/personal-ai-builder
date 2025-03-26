@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import LevelSection from '@/components/LevelSection';
@@ -9,6 +10,7 @@ import IntermediateSteps from '@/components/intermediate/IntermediateSteps';
 import AdvancedSteps from '@/components/advanced/AdvancedSteps';
 import CallToAction from '@/components/CallToAction';
 import PlatformsBanner from '@/components/PlatformsBanner';
+import BasicStepsWithResources from '@/components/basic/BasicStepsWithResources';
 
 const Index = () => {
   // Animate elements when they come into view
@@ -26,6 +28,15 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         
+        <div className="container py-2 flex justify-center">
+          <Link 
+            to="/resources" 
+            className="text-primary hover:text-primary/80 transition-colors text-sm font-medium flex items-center gap-1"
+          >
+            New to AI development? Check our beginner resources &rarr;
+          </Link>
+        </div>
+        
         <PlatformsBanner />
         
         <LevelSection
@@ -34,7 +45,7 @@ const Index = () => {
           subtitle="For users with beginner technical skills. Focus on using pre-built LLM services and simple tools to create a personal or small business AI assistant with minimal coding."
           level="Basic"
         >
-          <BasicSteps />
+          <BasicStepsWithResources />
         </LevelSection>
         
         <LevelSection

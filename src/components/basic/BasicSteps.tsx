@@ -1,9 +1,9 @@
 
 import React from 'react';
-import BasicStepsList from './BasicStepsList';
+import BasicStepsWithResources from './BasicStepsWithResources';
 
 const BasicSteps = () => {
-  return <BasicStepsList />;
+  return <BasicStepsWithResources />;
 };
 
 export default BasicSteps;

@@ -7,7 +7,10 @@ import {
   Zap, 
   ArrowRight, 
   GraduationCap, 
-  BookMarked 
+  BookMarked,
+  Video,
+  Users,
+  Github
 } from 'lucide-react';
 
 const CallToAction = () => {
@@ -75,6 +78,36 @@ const CallToAction = () => {
               <p className="text-muted-foreground mb-3">Join forums and communities where you can ask questions and share your projects.</p>
               <a href="https://huggingface.co/join" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center gap-1 text-sm hover:underline">
                 Join now <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="mb-4 bg-red-100 text-red-700 p-3 rounded-full w-12 h-12 flex items-center justify-center">
+                <Video className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Video Tutorials</h3>
+              <p className="text-muted-foreground mb-3">Learn by watching step-by-step video guides for creating AI applications.</p>
+              <a href="https://www.youtube.com/playlist?list=PLIivdWyY5sqLsaG5hNms0D9aZRBE7DHBb" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center gap-1 text-sm hover:underline">
+                Watch tutorials <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+            
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="mb-4 bg-yellow-100 text-yellow-700 p-3 rounded-full w-12 h-12 flex items-center justify-center">
+                <Github className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Open Source Projects</h3>
+              <p className="text-muted-foreground mb-3">Explore and contribute to open source AI projects to accelerate your learning.</p>
+              <a href="https://github.com/topics/ai-applications" target="_blank" rel="noopener noreferrer" className="text-primary flex items-center gap-1 text-sm hover:underline">
+                Discover projects <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </motion.div>

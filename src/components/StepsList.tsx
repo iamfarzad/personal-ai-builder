@@ -38,7 +38,7 @@ const StepsList = ({ totalSteps, children }: StepsListProps) => {
           return React.cloneElement(child, {
             onMarkComplete: handleMarkComplete,
             completed: completedSteps[child.props.number] || false
-          });
+          } as any);
         }
         return child;
       })}

@@ -19,7 +19,7 @@ interface StepCardProps {
   className?: string;
   platforms?: PlatformLink[];
   completed?: boolean;
-  onMarkComplete?: (isComplete: boolean) => void;
+  onMarkComplete?: (number: number, isComplete: boolean) => void;
   tips?: string[];
 }
 
@@ -40,7 +40,7 @@ const StepCard = ({
     const newState = !isComplete;
     setIsComplete(newState);
     if (onMarkComplete) {
-      onMarkComplete(newState);
+      onMarkComplete(number, newState);
     }
   };
 

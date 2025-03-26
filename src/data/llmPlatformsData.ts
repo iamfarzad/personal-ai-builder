@@ -55,15 +55,57 @@ export const llmPlatforms = [
     name: "Meta Llama", 
     url: "https://llama.meta.com/",
     logo: "https://i.pinimg.com/originals/f6/1a/27/f61a2765a8e211221ae0be71d7277620.png" 
-  },
-  { 
+  }
+];
+
+// LLM frameworks data with logo information
+export const llmFrameworks = [
+  {
     name: "LangChain", 
     url: "https://www.langchain.com",
-    logo: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4" 
+    logo: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
+    description: "Framework for developing applications powered by language models"
   },
-  { 
+  {
     name: "LlamaIndex", 
     url: "https://www.llamaindex.ai",
-    logo: "https://avatars.githubusercontent.com/u/118414232?s=200&v=4" 
+    logo: "https://avatars.githubusercontent.com/u/118414232?s=200&v=4",
+    description: "Data framework for LLM applications"
+  },
+  {
+    name: "Haystack", 
+    url: "https://haystack.deepset.ai/",
+    logo: "https://avatars.githubusercontent.com/u/51827949?s=200&v=4",
+    description: "Open-source framework for building NLP applications"
+  },
+  {
+    name: "Transformers.js", 
+    url: "https://huggingface.co/docs/transformers.js",
+    logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    description: "State-of-the-art Machine Learning for the web"
+  },
+  {
+    name: "Vercel AI SDK", 
+    url: "https://sdk.vercel.ai/docs",
+    logo: "https://assets.vercel.com/image/upload/v1662130559/front/favicon/vercel/57x57.png",
+    description: "Build AI-powered applications with React and Svelte"
+  },
+  {
+    name: "Ollama", 
+    url: "https://ollama.com/",
+    logo: "https://avatars.githubusercontent.com/u/121493369?s=200&v=4",
+    description: "Run open-source LLMs locally"
+  },
+  {
+    name: "Guidance", 
+    url: "https://github.com/guidance-ai/guidance",
+    logo: "https://raw.githubusercontent.com/guidance-ai/guidance/main/docs/resources/guidance-logo-white.jpg",
+    description: "Structure text generation with LLMs"
+  },
+  {
+    name: "LiteLLM", 
+    url: "https://github.com/BerriAI/litellm",
+    logo: "https://avatars.githubusercontent.com/u/128686189?s=200&v=4",
+    description: "Call all LLM APIs using the same format"
   }
 ];

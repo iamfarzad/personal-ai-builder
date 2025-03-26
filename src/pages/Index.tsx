@@ -10,6 +10,7 @@ import IntermediateSteps from '@/components/intermediate/IntermediateSteps';
 import AdvancedSteps from '@/components/advanced/AdvancedSteps';
 import CallToAction from '@/components/CallToAction';
 import PlatformsBanner from '@/components/PlatformsBanner';
+import LLMPlatformsBanner from '@/components/LLMPlatformsBanner';
 import BasicStepsWithResources from '@/components/basic/BasicStepsWithResources';
 
 const Index = () => {
@@ -38,6 +39,7 @@ const Index = () => {
         </div>
         
         <PlatformsBanner />
+        <LLMPlatformsBanner />
         
         <LevelSection
           id="basic"

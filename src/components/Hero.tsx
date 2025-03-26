@@ -6,28 +6,30 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-accent/50 to-background z-0" />
+      {/* Enhanced background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-accent/50 via-accent/30 to-background z-0" />
       
-      {/* Animated shapes */}
+      {/* Animated shapes with better visibility */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        {[...Array(3)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-primary/5"
+            className="absolute rounded-full bg-primary/10"
             initial={{ 
               top: `${Math.random() * 100}%`, 
               left: `${Math.random() * 100}%`,
-              width: `${100 + Math.random() * 200}px`,
-              height: `${100 + Math.random() * 200}px`,
+              width: `${100 + Math.random() * 300}px`,
+              height: `${100 + Math.random() * 300}px`,
               opacity: 0.3 + Math.random() * 0.4
             }}
             animate={{
               top: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
               left: [`${Math.random() * 100}%`, `${Math.random() * 100}%`],
+              scale: [1, 1.1, 1],
+              opacity: [0.3 + Math.random() * 0.4, 0.5 + Math.random() * 0.3, 0.3 + Math.random() * 0.4],
             }}
             transition={{
-              duration: 20 + Math.random() * 10,
+              duration: 15 + Math.random() * 15,
               repeat: Infinity,
               repeatType: 'reverse',
               ease: 'easeInOut'
@@ -36,6 +38,9 @@ const Hero = () => {
         ))}
       </div>
 
+      {/* Shimmer effect overlay */}
+      <div className="absolute inset-0 opacity-30 shimmer z-0" />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <motion.div
@@ -43,13 +48,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="badge bg-primary/10 text-primary mb-6">
+            <div className="badge bg-primary/10 text-primary mb-6 shadow-sm">
               Step-by-Step Guide
             </div>
           </motion.div>
           
           <motion.h1
-            className="heading-xl mb-6"
+            className="heading-xl mb-6 gradient-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -73,10 +78,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button size="lg" className="rounded-full px-8">
+            <Button size="lg" className="rounded-full px-8 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
               Get Started
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8">
+            <Button size="lg" variant="outline" className="rounded-full px-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               Learn More
             </Button>
           </motion.div>
@@ -91,7 +96,7 @@ const Hero = () => {
             ease: "easeInOut"
           }}
         >
-          <a href="#basic" className="flex flex-col items-center">
+          <a href="#basic" className="flex flex-col items-center hover:text-primary transition-colors duration-300">
             <p className="text-sm text-muted-foreground mb-2">Scroll to explore</p>
             <ArrowDown className="h-5 w-5 text-muted-foreground" />
           </a>

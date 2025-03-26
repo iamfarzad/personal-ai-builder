@@ -4,6 +4,7 @@ import Index from '@/pages/Index';
 import NotFound from '@/pages/NotFound';
 import BeginnerResources from '@/pages/BeginnerResources';
 import AIMasterclass from '@/pages/AIMasterclass';
+import { Toaster } from '@/components/ui/toaster';
 import '@/App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/ai-masterclass" element={<AIMasterclass />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Toaster />
     </Router>
   );
 }

@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -18,6 +19,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Enhanced animations */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,9 +29,92 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gradient and glow effects */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+}
+
+.glow {
+  box-shadow: 0 0 15px 5px rgba(59, 130, 246, 0.2);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Cool section transitions */
+.section-transition {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--background));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Enhanced responsive styles */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
+  }
+  
+  .float-animation {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .pulse-animation {
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  .shimmer {
+    background: linear-gradient(90deg, 
+      rgba(255,255,255,0) 0%, 
+      rgba(255,255,255,0.2) 50%, 
+      rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
   }
 }
 
@@ -39,4 +124,15 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Glass effect for cards and sections */
+.glass-effect {
+  @apply backdrop-blur-sm bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+}
+
+/* Improved focus states */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
 }

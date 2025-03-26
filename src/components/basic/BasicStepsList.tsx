@@ -3,11 +3,12 @@ import React from 'react';
 import StepsList from '@/components/StepsList';
 import { 
   BasicStep1, BasicStep2, BasicStep3, BasicStep4,
-  BasicStep5, BasicStep6, BasicStep7, BasicStep8, BasicStep9
+  BasicStep5, BasicStep6, BasicStep7, BasicStep8, 
+  BasicStep9, BasicStep10
 } from './steps';
 
 const BasicStepsList = () => {
-  const totalSteps = 9;
+  const totalSteps = 10;
 
   return (
     <StepsList totalSteps={totalSteps}>
@@ -20,6 +21,7 @@ const BasicStepsList = () => {
       <BasicStep7 number={7} />
       <BasicStep8 number={8} />
       <BasicStep9 number={9} />
+      <BasicStep10 number={10} />
     </StepsList>
   );
 };

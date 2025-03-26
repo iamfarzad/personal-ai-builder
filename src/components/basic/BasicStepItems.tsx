@@ -9,7 +9,8 @@ import {
   BasicStep6,
   BasicStep7,
   BasicStep8,
-  BasicStep9
+  BasicStep9,
+  BasicStep10
 } from './steps';
 
 export {
@@ -21,5 +22,6 @@ export {
   BasicStep6,
   BasicStep7,
   BasicStep8,
-  BasicStep9
+  BasicStep9,
+  BasicStep10
 };

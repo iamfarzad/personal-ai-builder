@@ -8,3 +8,4 @@ export { default as BasicStep6 } from './BasicStep6';
 export { default as BasicStep7 } from './BasicStep7';
 export { default as BasicStep8 } from './BasicStep8';
 export { default as BasicStep9 } from './BasicStep9';
+export { default as BasicStep10 } from './BasicStep10';

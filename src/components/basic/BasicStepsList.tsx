@@ -4,7 +4,7 @@ import StepsList from '@/components/StepsList';
 import { 
   BasicStep1, BasicStep2, BasicStep3, BasicStep4,
   BasicStep5, BasicStep6, BasicStep7, BasicStep8, BasicStep9
-} from './BasicStepItems';
+} from './steps';
 
 const BasicStepsList = () => {
   const totalSteps = 9;

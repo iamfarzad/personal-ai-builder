@@ -30,12 +30,21 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         
-        <div className="container py-2 flex justify-center">
+        <div className="container py-2 flex justify-center flex-col md:flex-row gap-3 items-center">
           <Link 
             to="/resources" 
             className="text-primary hover:text-primary/80 transition-colors text-sm font-medium flex items-center gap-1"
           >
             New to AI development? Check our beginner resources &rarr;
+          </Link>
+          
+          <div className="hidden md:block text-muted-foreground">|</div>
+          
+          <Link 
+            to="/ai-masterclass" 
+            className="text-primary hover:text-primary/80 transition-colors text-sm font-medium flex items-center gap-1"
+          >
+            Learn the basics of AI and prompt engineering &rarr;
           </Link>
         </div>
         

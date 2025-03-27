@@ -14,7 +14,7 @@ import {
   SidebarTrigger,
   SidebarFooter
 } from '@/components/ui/sidebar';
-import { Home, BookOpen, GraduationCap, HelpCircle, FileText, Settings, ChevronRight, BookText, Lightbulb } from 'lucide-react';
+import { Home, BookOpen, GraduationCap, HelpCircle, FileText, Settings, BookText, Lightbulb } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 
@@ -84,23 +84,29 @@ const GlobalSidebar = () => {
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem>
-                  <SidebarMenuButton tooltip="AI Glossary">
-                    <BookText className="mr-2" size={16} />
-                    <span>AI Glossary</span>
+                  <SidebarMenuButton asChild isActive={isActive("/ai-glossary")} tooltip="AI Glossary">
+                    <Link to="/ai-glossary">
+                      <BookText className="mr-2" size={16} />
+                      <span>AI Glossary</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 
                 <SidebarMenuItem>
-                  <SidebarMenuButton tooltip="Prompt Library">
-                    <FileText className="mr-2" size={16} />
-                    <span>Prompt Library</span>
+                  <SidebarMenuButton asChild isActive={isActive("/prompt-library")} tooltip="Prompt Library">
+                    <Link to="/prompt-library">
+                      <FileText className="mr-2" size={16} />
+                      <span>Prompt Library</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 
                 <SidebarMenuItem>
-                  <SidebarMenuButton tooltip="Case Studies">
-                    <Lightbulb className="mr-2" size={16} />
-                    <span>Case Studies</span>
+                  <SidebarMenuButton asChild isActive={isActive("/case-studies")} tooltip="Case Studies">
+                    <Link to="/case-studies">
+                      <Lightbulb className="mr-2" size={16} />
+                      <span>Case Studies</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

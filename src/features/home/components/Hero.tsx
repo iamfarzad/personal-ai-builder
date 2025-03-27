@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ArrowDown, BookOpen, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -49,8 +48,18 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Subtle grid pattern for texture */}
-      <div className="absolute inset-0 opacity-10 bg-grid-pattern z-0"></div>
+      {/* Properly centered grid pattern for texture */}
+      <div 
+        className="absolute inset-0 z-0 opacity-10" 
+        style={{ 
+          backgroundImage: `
+            linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px',
+          backgroundPosition: 'center center'
+        }}
+      ></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">

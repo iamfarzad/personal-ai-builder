@@ -1,12 +1,23 @@
 
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, BookOpen, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/resources');
+  };
+
+  const handleLearnMore = () => {
+    document.getElementById('basic')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
-      {/* Background gradient */}
+      {/* Enhanced background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent/50 via-accent/30 to-background z-0" />
       
       {/* Animated shapes */}
@@ -38,8 +49,8 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Shimmer effect overlay */}
-      <div className="absolute inset-0 opacity-30 shimmer z-0" />
+      {/* Subtle grid pattern for texture */}
+      <div className="absolute inset-0 opacity-10 bg-grid-pattern z-0"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -48,18 +59,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="badge bg-primary/10 text-primary mb-6 shadow-sm">
-              Step-by-Step Guide
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 shadow-sm">
+              <BookOpen className="h-4 w-4" />
+              <span className="text-sm font-medium">Comprehensive Learning Path</span>
             </div>
           </motion.div>
           
           <motion.h1
-            className="heading-xl mb-6 gradient-text"
+            className="heading-xl mb-6 bg-gradient-to-r from-primary to-primary-foreground/90 dark:from-primary-foreground dark:to-primary/90 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            Building Personal AI Systems
+            Understanding AI Technologies
           </motion.h1>
           
           <motion.p
@@ -68,8 +80,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
-            From beginner-friendly tools to advanced fine-tuning techniques, 
-            learn how to create AI systems tailored for your personal or business needs.
+            From beginner concepts to advanced implementations — learn how to leverage AI systems effectively, 
+            whether you're new to AI or looking to deepen your technical expertise.
           </motion.p>
           
           <motion.div
@@ -78,12 +90,40 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
-            <Button size="lg" className="rounded-full px-8 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
+            <Button 
+              size="lg" 
+              className="rounded-full px-8 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1 gap-2"
+              onClick={handleGetStarted}
+            >
+              <Zap className="h-4 w-4" />
               Get Started
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              Learn More
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full px-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 gap-2"
+              onClick={handleLearnMore}
+            >
+              <Code className="h-4 w-4" />
+              Explore Topics
             </Button>
+          </motion.div>
+          
+          {/* Feature badges */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mt-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            {['Beginner Friendly', 'Practical Examples', 'Advanced Techniques', 'Prompt Engineering'].map((badge, index) => (
+              <span 
+                key={index}
+                className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
+              >
+                {badge}
+              </span>
+            ))}
           </motion.div>
         </div>
         

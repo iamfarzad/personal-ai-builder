@@ -1,12 +1,17 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, BookOpen, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return document.documentElement.classList.contains('dark');
+  });
+  const navigate = useNavigate();
 
   // Track scroll position for header styling
   useEffect(() => {
@@ -18,10 +23,16 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle('dark');
+    setIsDarkMode(!isDarkMode);
+  };
+
   const navItems = [
-    { name: 'Basic', href: '#basic' },
-    { name: 'Intermediate', href: '#intermediate' },
-    { name: 'Advanced', href: '#advanced' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'AI Masterclass', href: '/ai-masterclass' },
+    { name: 'Glossary', href: '/ai-glossary' },
   ];
 
   return (
@@ -37,12 +48,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
             <motion.a
-              href="#"
+              href="/"
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-foreground font-display font-bold text-xl">PersonalAI</span>
+              <BookOpen className="h-6 w-6 mr-2 text-primary" />
+              <span className="text-foreground font-display font-bold text-xl">AI Education</span>
             </motion.a>
           </div>
 
@@ -63,12 +75,33 @@ const Header = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button className="rounded-full px-6">Get Started</Button>
+              <Button 
+                className="rounded-full" 
+                onClick={() => navigate('/prompt-library')}
+              >
+                Prompt Library
+              </Button>
             </motion.div>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={toggleDarkMode} 
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and dark mode toggle */}
+          <div className="flex md:hidden items-center space-x-2">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={toggleDarkMode} 
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
             <Button
               variant="ghost"
               size="icon"
@@ -106,7 +139,15 @@ const Header = () => {
               {item.name}
             </a>
           ))}
-          <Button className="w-full mt-4 rounded-full">Get Started</Button>
+          <Button 
+            className="w-full mt-4 rounded-full"
+            onClick={() => {
+              navigate('/prompt-library');
+              setIsMenuOpen(false);
+            }}
+          >
+            Prompt Library
+          </Button>
         </div>
       </motion.div>
     </motion.header>

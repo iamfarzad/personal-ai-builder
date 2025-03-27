@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { 
   Sidebar, 
   SidebarHeader, 
@@ -15,15 +16,19 @@ import {
   FileText, 
   Lightbulb,
   HelpCircle, 
-  Settings
+  Settings,
+  User,
+  ExternalLink
 } from 'lucide-react';
 import { useIsMobile } from '@/hooks';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import SidebarNavItem from './SidebarNavItem';
 import SidebarNavGroup from './SidebarNavGroup';
 
 const GlobalSidebar = () => {
   const isMobile = useIsMobile();
+  const location = useLocation();
   
   return (
     <>
@@ -35,10 +40,15 @@ const GlobalSidebar = () => {
       <Sidebar variant="floating" className="w-64">
         <SidebarHeader className="flex flex-row items-center justify-between">
           <div>
-            <h3 className="text-lg font-semibold">PersonalAI</h3>
-            <p className="text-xs text-muted-foreground">
-              Learn AI for personal use
-            </p>
+            <NavLink to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <BookOpen className="h-5 w-5 text-primary" />
+              <div>
+                <h3 className="text-lg font-semibold">AI Education</h3>
+                <p className="text-xs text-muted-foreground">
+                  by Farzad Bayat
+                </p>
+              </div>
+            </NavLink>
           </div>
           {isMobile && <SidebarTrigger className="h-8 w-8" />}
         </SidebarHeader>
@@ -55,6 +65,28 @@ const GlobalSidebar = () => {
             <SidebarNavItem href="/prompt-library" label="Prompt Library" icon={FileText} />
             <SidebarNavItem href="/case-studies" label="Case Studies" icon={Lightbulb} />
           </SidebarNavGroup>
+          
+          <div className="mt-6 px-3 py-4 rounded-lg bg-sidebar-accent border border-sidebar-border">
+            <h4 className="text-sm font-medium text-sidebar-accent-foreground mb-2">Main Website</h4>
+            <p className="text-xs text-sidebar-foreground/80 mb-3">Visit my main website for more content</p>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              asChild 
+              className="w-full justify-between items-center text-sidebar-primary"
+            >
+              <a 
+                href="https://farzadbayat.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1"
+              >
+                <User size={14} />
+                <span>farzadbayat.com</span>
+                <ExternalLink size={12} className="ml-auto" />
+              </a>
+            </Button>
+          </div>
           
           <SidebarFooter className="mt-auto">
             <Button variant="outline" className="w-full justify-start" size="sm">

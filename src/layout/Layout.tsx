@@ -19,6 +19,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     }
+    
+    // Listen for changes in system dark mode preference
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleDarkModeChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+    
+    darkModeMediaQuery.addEventListener('change', handleDarkModeChange);
+    return () => darkModeMediaQuery.removeEventListener('change', handleDarkModeChange);
   }, []);
   
   return (

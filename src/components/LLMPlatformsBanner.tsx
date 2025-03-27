@@ -7,14 +7,14 @@ import { llmPlatforms } from '@/data/llmPlatformsData';
 
 const LLMPlatformsBanner = () => {
   return (
-    <div className="w-full py-12 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-blue-950/20">
-      <div className="container">
+    <div className="w-full py-14 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-blue-950/20">
+      <div className="container max-w-7xl mx-auto">
         <h3 className="text-center text-xl font-medium text-foreground mb-6">
           Popular LLM Platforms & Services
         </h3>
-        <Separator className="mb-8 max-w-2xl mx-auto" />
+        <Separator className="mb-10 max-w-2xl mx-auto" />
         
-        <div className="px-4 mx-auto max-w-6xl relative">
+        <div className="px-4 mx-auto relative">
           <Carousel
             opts={{
               align: "center",
@@ -35,8 +35,8 @@ const LLMPlatformsBanner = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <div className="flex gap-2">
+            <div className="flex justify-center mt-8">
+              <div className="flex gap-4">
                 <CarouselPrevious className="static translate-y-0 transform-none" />
                 <CarouselNext className="static translate-y-0 transform-none" />
               </div>

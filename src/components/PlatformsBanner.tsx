@@ -7,14 +7,14 @@ import { platforms } from '@/data/platformsData';
 
 const PlatformsBanner = () => {
   return (
-    <div className="w-full py-12 bg-gradient-to-r from-purple-50 via-blue-50 to-purple-50 dark:from-indigo-950/20 dark:via-blue-950/10 dark:to-indigo-950/20">
-      <div className="container">
+    <div className="w-full py-14 bg-gradient-to-r from-purple-50 via-blue-50 to-purple-50 dark:from-indigo-950/20 dark:via-blue-950/10 dark:to-indigo-950/20">
+      <div className="container max-w-7xl mx-auto">
         <h3 className="text-center text-xl font-medium text-foreground mb-6">
           Powered by Industry-Leading Platforms
         </h3>
-        <Separator className="mb-8 max-w-2xl mx-auto" />
+        <Separator className="mb-10 max-w-2xl mx-auto" />
         
-        <div className="px-4 mx-auto max-w-6xl relative">
+        <div className="px-4 mx-auto relative">
           <Carousel
             opts={{
               align: "center",
@@ -35,8 +35,8 @@ const PlatformsBanner = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <div className="flex gap-2">
+            <div className="flex justify-center mt-8">
+              <div className="flex gap-4">
                 <CarouselPrevious className="static translate-y-0 transform-none" />
                 <CarouselNext className="static translate-y-0 transform-none" />
               </div>

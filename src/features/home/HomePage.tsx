@@ -1,12 +1,19 @@
 
+import { Fragment } from 'react';
 import { Hero, CallToAction } from './components';
+import PlatformsBanner from '@/components/PlatformsBanner';
+import LLMPlatformsBanner from '@/components/LLMPlatformsBanner';
+import LLMFrameworksBanner from '@/components/LLMFrameworksBanner';
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen">
+    <Fragment>
       <Hero />
+      <PlatformsBanner />
+      <LLMPlatformsBanner />
+      <LLMFrameworksBanner />
       <CallToAction />
-    </div>
+    </Fragment>
   );
 };
 

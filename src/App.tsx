@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Layout } from '@/layout';
 import Index from '@/pages/Index';
 import NotFound from '@/pages/NotFound';
 import BeginnerResources from '@/pages/BeginnerResources';
@@ -7,7 +8,6 @@ import AIMasterclass from '@/pages/AIMasterclass';
 import AIGlossary from '@/pages/AIGlossary';
 import PromptLibrary from '@/pages/PromptLibrary';
 import CaseStudies from '@/pages/CaseStudies';
-import Layout from '@/components/Layout';
 import { Toaster } from '@/components/ui/toaster';
 import '@/App.css';
 

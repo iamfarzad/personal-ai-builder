@@ -15,7 +15,7 @@ const PlatformItem = ({ name, url, logo }: PlatformItemProps) => {
       rel="noopener noreferrer"
       className="flex flex-col items-center gap-3 transition-all duration-300 hover:opacity-90 hover:-translate-y-1 p-2"
     >
-      <div className="h-14 w-14 rounded-lg bg-white shadow-sm flex items-center justify-center p-2 border border-gray-100">
+      <div className="h-16 w-16 rounded-lg bg-white shadow-sm flex items-center justify-center p-2 border border-gray-100 dark:bg-gray-800 dark:border-gray-700">
         <img 
           src={logo} 
           alt={`${name} logo`} 
@@ -27,14 +27,14 @@ const PlatformItem = ({ name, url, logo }: PlatformItemProps) => {
             const parent = target.parentElement;
             if (parent) {
               const textSpan = document.createElement('span');
-              textSpan.className = 'text-sm font-medium text-gray-700 dark:text-gray-300';
-              textSpan.textContent = name.substring(0, 1);
+              textSpan.className = 'text-xl font-semibold text-gray-700 dark:text-gray-300';
+              textSpan.textContent = name.substring(0, 2).toUpperCase();
               parent.appendChild(textSpan);
             }
           }}
         />
       </div>
-      <span className="text-xs font-medium text-muted-foreground text-center w-20 truncate" title={name}>
+      <span className="text-sm font-medium text-muted-foreground text-center w-24 truncate" title={name}>
         {name}
       </span>
     </a>

@@ -1,7 +1,5 @@
 
 import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import { Separator } from '@/components/ui/separator';
 import { useToast } from '@/hooks/use-toast';
 import { 
@@ -34,8 +32,6 @@ const AIMasterclass = () => {
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/5 to-transparent -z-10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-blue-500/5 to-transparent -z-10 rounded-full blur-3xl" />
       
-      <Header />
-      
       <main className="flex-grow">
         {/* Hero Section */}
         <MasterclassHero />
@@ -62,8 +58,6 @@ const AIMasterclass = () => {
           <CallToActionSection />
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 };

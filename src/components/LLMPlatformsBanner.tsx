@@ -7,14 +7,14 @@ import { llmPlatforms } from '@/data/llmPlatformsData';
 
 const LLMPlatformsBanner = () => {
   return (
-    <div className="w-full py-14 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-blue-950/20">
-      <div className="container max-w-7xl mx-auto">
-        <h3 className="text-center text-xl font-medium text-foreground mb-6">
+    <div className="w-full py-10 md:py-14 bg-gradient-to-r from-blue-50 via-purple-50 to-blue-50 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-blue-950/20">
+      <div className="container max-w-7xl mx-auto px-4">
+        <h3 className="text-center text-lg md:text-xl font-medium text-foreground mb-4 md:mb-6">
           Popular LLM Platforms & Services
         </h3>
-        <Separator className="mb-10 max-w-2xl mx-auto" />
+        <Separator className="mb-8 max-w-xs sm:max-w-sm md:max-w-2xl mx-auto" />
         
-        <div className="px-4 mx-auto relative">
+        <div className="relative">
           <Carousel
             opts={{
               align: "center",
@@ -22,9 +22,9 @@ const LLMPlatformsBanner = () => {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-4 md:-ml-6">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {llmPlatforms.map((platform, index) => (
-                <CarouselItem key={index} className="pl-4 md:pl-6 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
                   <div className="flex justify-center">
                     <PlatformItem
                       name={platform.name}
@@ -35,10 +35,10 @@ const LLMPlatformsBanner = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex justify-center mt-8">
-              <div className="flex gap-4">
-                <CarouselPrevious className="static translate-y-0 transform-none" />
-                <CarouselNext className="static translate-y-0 transform-none" />
+            <div className="flex justify-center mt-6">
+              <div className="flex gap-2 md:gap-4">
+                <CarouselPrevious className="static translate-y-0 transform-none h-8 w-8 md:h-9 md:w-9" />
+                <CarouselNext className="static translate-y-0 transform-none h-8 w-8 md:h-9 md:w-9" />
               </div>
             </div>
           </Carousel>

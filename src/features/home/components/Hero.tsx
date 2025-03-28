@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { ArrowDown, BookOpen, Code, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,21 +16,21 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-10 pb-16 overflow-hidden">
       {/* Enhanced background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent/50 via-accent/30 to-background z-0" />
       
       {/* Animated shapes */}
       <div className="absolute inset-0 overflow-hidden z-0">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-primary/10"
             initial={{ 
               top: `${Math.random() * 100}%`, 
               left: `${Math.random() * 100}%`,
-              width: `${100 + Math.random() * 300}px`,
-              height: `${100 + Math.random() * 300}px`,
+              width: `${80 + Math.random() * 200}px`,
+              height: `${80 + Math.random() * 200}px`,
               opacity: 0.3 + Math.random() * 0.4
             }}
             animate={{
@@ -68,14 +69,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 shadow-sm">
-              <BookOpen className="h-4 w-4" />
-              <span className="text-sm font-medium">Comprehensive Learning Path</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary/10 text-primary mb-4 sm:mb-6 shadow-sm">
+              <BookOpen className="h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="text-xs sm:text-sm font-medium">Comprehensive Learning Path</span>
             </div>
           </motion.div>
           
           <motion.h1
-            className="heading-xl mb-6 bg-gradient-to-r from-primary to-primary-foreground/90 dark:from-primary-foreground dark:to-primary/90 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary to-primary-foreground/90 dark:from-primary-foreground dark:to-primary/90 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -84,7 +85,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.p
-            className="paragraph mb-8 max-w-3xl"
+            className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-3xl text-foreground/80"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -94,14 +95,14 @@ const Hero = () => {
           </motion.p>
           
           <motion.div
-            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           >
             <Button 
               size="lg" 
-              className="rounded-full px-8 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1 gap-2"
+              className="rounded-full px-6 sm:px-8 shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1 gap-2 w-full sm:w-auto"
               onClick={handleGetStarted}
             >
               <Zap className="h-4 w-4" />
@@ -110,7 +111,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="rounded-full px-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 gap-2"
+              className="rounded-full px-6 sm:px-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 gap-2 w-full sm:w-auto"
               onClick={handleLearnMore}
             >
               <Code className="h-4 w-4" />
@@ -120,7 +121,7 @@ const Hero = () => {
           
           {/* Feature badges */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 mt-10"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8 sm:mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -128,7 +129,7 @@ const Hero = () => {
             {['Beginner Friendly', 'Practical Examples', 'Advanced Techniques', 'Prompt Engineering'].map((badge, index) => (
               <span 
                 key={index}
-                className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
+                className="px-2 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-medium"
               >
                 {badge}
               </span>
@@ -137,7 +138,7 @@ const Hero = () => {
         </div>
         
         <motion.div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center"
           animate={{ y: [0, 8, 0] }}
           transition={{ 
             repeat: Infinity, 
@@ -146,8 +147,8 @@ const Hero = () => {
           }}
         >
           <a href="#basic" className="flex flex-col items-center hover:text-primary transition-colors duration-300">
-            <p className="text-sm text-muted-foreground mb-2">Scroll to explore</p>
-            <ArrowDown className="h-5 w-5 text-muted-foreground" />
+            <p className="text-xs sm:text-sm text-muted-foreground mb-2">Scroll to explore</p>
+            <ArrowDown className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
           </a>
         </motion.div>
       </div>

@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <Hero />
-      <div className="space-y-12 py-6">
+      <div className="space-y-8 md:space-y-12">
         <PlatformsBanner />
         <LLMPlatformsBanner />
         <LLMFrameworksBanner />

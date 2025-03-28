@@ -38,9 +38,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <SidebarProvider defaultOpen={!isMobile}>
       <div className="min-h-screen flex flex-col w-full relative bg-background text-foreground transition-colors duration-300">
         <Header />
-        <div className="flex flex-1 w-full pt-16 md:pt-20">
+        <div className="flex flex-1 w-full pt-14 md:pt-16 lg:pt-20">
           <GlobalSidebar />
-          <main className="flex-1 w-full">
+          <main className="flex-1 w-full pb-4">
             {children}
           </main>
         </div>

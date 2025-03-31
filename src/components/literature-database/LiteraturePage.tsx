@@ -4,76 +4,75 @@ import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, BookOpen, Users, Briefcase, HeadphonesIcon, Package, RefreshCw, BarChart3, Shield } from "lucide-react";
-import LiteratureCard from "./LiteratureCard";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import LiteratureCard from "./LiteratureCard";
 
-// Mock data - in a real application, this would be imported from a data file
+// This is temporary mock data until we connect to a real API
 const literatureData = [
   {
     id: 1,
-    title: "AI Implementation Strategies for HR Departments",
-    authors: "Jennifer Smith, Robert Johnson",
-    summary: "A comprehensive guide for HR professionals looking to integrate AI tools into their workflows.",
-    publicationDate: "2023-03-15",
-    category: "hr",
-    keywords: ["human resources", "AI integration", "workflow optimization"],
-    link: "#",
+    title: "The Impact of AI on Knowledge Work",
+    authors: "Zhang et al.",
+    summary: "This paper explores how AI is transforming knowledge-intensive professions and suggests frameworks for human-AI collaboration across different sectors.",
+    publicationDate: "2023-05-15",
+    category: "leadership",
+    keywords: ["AI adoption", "knowledge work", "digital transformation"],
+    link: "https://example.com/paper1",
     imageUrl: "/placeholder.svg"
   },
   {
     id: 2,
-    title: "Leadership in the Age of AI",
-    authors: "Michael Chen",
-    summary: "Exploring how leadership roles are evolving with the advent of artificial intelligence in the workplace.",
-    publicationDate: "2023-05-22",
-    category: "leadership",
-    keywords: ["leadership", "management", "organizational change"],
-    link: "#",
+    title: "Ethical Considerations in AI Implementation",
+    authors: "Johnson & Patel",
+    summary: "A comprehensive analysis of ethical challenges businesses face when implementing AI systems, with case studies from healthcare, finance, and retail sectors.",
+    publicationDate: "2023-02-28",
+    category: "data-ethics",
+    keywords: ["AI ethics", "responsible AI", "business ethics"],
+    link: "https://example.com/paper2",
     imageUrl: "/placeholder.svg"
   },
   {
     id: 3,
-    title: "Optimizing Customer Service with Conversational AI",
-    authors: "Sophia Rodriguez, Daniel Kim",
-    summary: "Case studies and strategies for implementing conversational AI in customer service departments.",
-    publicationDate: "2023-02-10",
+    title: "Optimizing Customer Service with AI Assistants",
+    authors: "Rodriguez et al.",
+    summary: "This research examines the effectiveness of AI assistants in customer service environments, measuring customer satisfaction, resolution times, and agent productivity.",
+    publicationDate: "2023-07-10",
     category: "customer-service",
-    keywords: ["customer service", "conversational AI", "chatbots"],
-    link: "#",
+    keywords: ["customer experience", "AI assistants", "service optimization"],
+    link: "https://example.com/paper3",
     imageUrl: "/placeholder.svg"
   },
   {
     id: 4,
-    title: "Ethical Considerations in AI-Driven Decision Making",
-    authors: "Aisha Patel, Thomas Wilson",
-    summary: "Analyzing the ethical implications of using AI for business decisions and recommendations for responsible implementation.",
-    publicationDate: "2023-07-08",
-    category: "data-ethics",
-    keywords: ["ethics", "decision making", "responsible AI"],
-    link: "#",
+    title: "AI-Driven Organizational Change",
+    authors: "Williams & Taylor",
+    summary: "A study of how AI implementation drives organizational restructuring, with strategies for managing change and mitigating employee resistance.",
+    publicationDate: "2023-04-22",
+    category: "organizational-change",
+    keywords: ["change management", "organizational psychology", "digital adoption"],
+    link: "https://example.com/paper4",
     imageUrl: "/placeholder.svg"
   },
   {
     id: 5,
-    title: "Supply Chain Optimization Using Machine Learning",
-    authors: "Carlos Mendez",
-    summary: "How machine learning algorithms can improve efficiency and reduce costs in supply chain operations.",
-    publicationDate: "2023-04-30",
-    category: "operations",
-    keywords: ["supply chain", "machine learning", "optimization"],
-    link: "#",
+    title: "The Future of HR: AI's Role in Talent Management",
+    authors: "Garcia & Brown",
+    summary: "This paper investigates how AI tools are transforming recruitment, onboarding, training, and employee development in leading organizations.",
+    publicationDate: "2023-08-05",
+    category: "hr",
+    keywords: ["talent management", "HR technology", "recruitment"],
+    link: "https://example.com/paper5",
     imageUrl: "/placeholder.svg"
   },
   {
     id: 6,
-    title: "Digital Transformation Roadmap for Traditional Businesses",
-    authors: "Emma Williams, James Taylor",
-    summary: "A step-by-step guide for traditional businesses looking to undergo digital transformation with AI technologies.",
-    publicationDate: "2023-06-15",
-    category: "digital-transformation",
-    keywords: ["digital transformation", "traditional business", "roadmap"],
-    link: "#",
+    title: "Supply Chain Optimization through AI",
+    authors: "Lee et al.",
+    summary: "A technical analysis of AI applications in supply chain management, including demand forecasting, inventory optimization, and logistics planning.",
+    publicationDate: "2023-06-30",
+    category: "operations",
+    keywords: ["supply chain", "logistics", "optimization algorithms"],
+    link: "https://example.com/paper6",
     imageUrl: "/placeholder.svg"
   }
 ];
@@ -108,24 +107,6 @@ export default function LiteraturePage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="mb-8">
-        <nav className="flex" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-1 md:space-x-3">
-            <li className="inline-flex items-center">
-              <Link to="/" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground">
-                Home
-              </Link>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <span className="mx-2 text-muted-foreground">/</span>
-                <span className="text-sm font-medium">Literature</span>
-              </div>
-            </li>
-          </ol>
-        </nav>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -195,7 +176,7 @@ export default function LiteraturePage() {
 
             {filteredLiterature.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-slate-500 dark:text-slate-400">No results found. Try adjusting your search criteria.</p>
+                <p className="text-slate-500">No results found. Try adjusting your search criteria.</p>
               </div>
             )}
           </TabsContent>

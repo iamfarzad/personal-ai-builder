@@ -19,7 +19,8 @@ import {
   Settings,
   User,
   ExternalLink, 
-  ChevronRight
+  ChevronRight,
+  Library
 } from 'lucide-react';
 import { useIsMobile } from '@/hooks';
 import { Button } from '@/components/ui/button';
@@ -73,6 +74,7 @@ const GlobalSidebar = () => {
             <SidebarNavItem href="/ai-glossary" label="AI Glossary" icon={BookText} />
             <SidebarNavItem href="/prompt-library" label="Prompt Library" icon={FileText} />
             <SidebarNavItem href="/case-studies" label="Case Studies" icon={Lightbulb} />
+            <SidebarNavItem href="/literature" label="Literature Database" icon={Library} />
           </SidebarNavGroup>
           
           <div className="mt-6 px-3 py-4 rounded-lg bg-sidebar-accent border border-sidebar-border group hover:bg-sidebar-accent/80 transition-colors">
